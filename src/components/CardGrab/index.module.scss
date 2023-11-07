@@ -183,6 +183,8 @@
 }
 
 .CardGrab_getIt {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   height: 40px;
@@ -201,4 +203,22 @@
   &.hidden {
     opacity: 0;
   }
+}
+
+.CardGrab_getIt_animBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.CardGrab_getIt_anim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 30px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  filter: blur(10px);
+
+  opacity: 0;
 }

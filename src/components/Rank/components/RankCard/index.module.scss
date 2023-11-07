@@ -1,18 +1,144 @@
 .RankCard {
+  position: relative;
   padding: 12px;
 
   border-radius: 24px;
-  opacity: 1;
-  background: linear-gradient(
-      180deg,
-      rgba(81, 182, 255, 0) 28.13%,
-      rgba(81, 182, 255, 0.02) 79.69%,
-      rgba(81, 182, 255, 0.08) 100%
-    ),
-    #f6f6f6;
+  opacity: 0.3;
+
+  z-index: 10;
+
+  &.light {
+    &.bronze {
+      background-color: #f6f6f6;
+    }
+
+    &.silver {
+      background: linear-gradient(
+          180deg,
+          rgba(81, 182, 255, 0) 28.13%,
+          rgba(81, 182, 255, 0.02) 79.69%,
+          rgba(81, 182, 255, 0.08) 100%
+        ),
+        #f6f6f6;
+    }
+
+    &.gold {
+      background: linear-gradient(
+          180deg,
+          rgba(255, 238, 81, 0) 28.13%,
+          rgba(255, 238, 81, 0.02) 79.69%,
+          rgba(255, 238, 81, 0.08) 100%
+        ),
+        #f6f6f6;
+    }
+
+    &.diamond {
+      background: linear-gradient(
+          180deg,
+          rgba(81, 151, 255, 0) 28.13%,
+          rgba(81, 151, 255, 0.07) 79.69%,
+          rgba(81, 151, 255, 0.21) 100%
+        ),
+        #f6f6f6;
+    }
+
+    &.emerald {
+      background: linear-gradient(
+          180deg,
+          rgba(188, 255, 81, 0) 28.13%,
+          rgba(188, 255, 81, 0.07) 79.69%,
+          rgba(188, 255, 81, 0.21) 100%
+        ),
+        #f6f6f6;
+    }
+  }
+
+  &.dark {
+    &.bronze {
+      background-color: #1b1b1b;
+    }
+
+    &.silver {
+      background: linear-gradient(
+          180deg,
+          rgba(81, 182, 255, 0) 28.13%,
+          rgba(81, 182, 255, 0.02) 79.69%,
+          rgba(81, 182, 255, 0.08) 100%
+        ),
+        #1b1b1b;
+    }
+
+    &.gold {
+      background: linear-gradient(
+          180deg,
+          rgba(255, 238, 81, 0) 28.13%,
+          rgba(255, 238, 81, 0.02) 79.69%,
+          rgba(255, 238, 81, 0.08) 100%
+        ),
+        #1b1b1b;
+    }
+
+    &.diamond {
+      background: linear-gradient(
+          180deg,
+          rgba(81, 151, 255, 0) 28.13%,
+          rgba(81, 151, 255, 0.07) 79.69%,
+          rgba(81, 151, 255, 0.21) 100%
+        ),
+        #1b1b1b;
+    }
+
+    &.emerald {
+      background: linear-gradient(
+          180deg,
+          rgba(188, 255, 81, 0) 28.13%,
+          rgba(188, 255, 81, 0.07) 79.69%,
+          rgba(188, 255, 81, 0.21) 100%
+        ),
+        #1b1b1b;
+    }
+
+    .RankCard_title {
+      color: #fff;
+    }
+
+    .RankCard_info_item {
+      background: rgba(175, 175, 175, 0.08);
+    }
+
+    .RankCard_info_item_title {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .RankCard_info_item_value {
+      color: #fff;
+    }
+  }
 
   &.active {
     opacity: 1;
+
+    z-index: 20;
+
+    &.bronze {
+      box-shadow: 0px 0px 70px 0px #dbb172a5;
+    }
+
+    &.silver {
+      box-shadow: 0px 0px 70px 0px #6dccff88;
+    }
+
+    &.gold {
+      box-shadow: 0px 0px 70px 0px rgba(255, 218, 11, 0.516);
+    }
+
+    &.diamond {
+      box-shadow: 0px 0px 70px 0px #60aaff94;
+    }
+
+    &.emerald {
+      box-shadow: 0px 0px 70px 0px #bdff5278;
+    }
   }
 }
 
@@ -35,6 +161,7 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 117.7%; /* 23.54px */
+  text-transform: capitalize;
 }
 
 .RankCard_info {

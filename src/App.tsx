@@ -13,6 +13,7 @@ const App = () => {
       </div>
       <div className={clsx(styles.App_rank)}>
         <Rank />
+        <Rank theme="dark" />
       </div>
     </div>
   );

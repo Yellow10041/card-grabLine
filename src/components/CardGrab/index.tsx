@@ -23,9 +23,11 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
   const refArrow = useRef<HTMLDivElement>(null);
   const tongueBackRef = useRef<HTMLDivElement>(null);
   const refDiscount = useRef<HTMLDivElement>(null);
-  const refGetIt = useRef<HTMLDivElement>(null);
+  const refGetIt = useRef<HTMLButtonElement>(null);
   const refImgFront = useRef<HTMLDivElement>(null);
   const refImgBack = useRef<HTMLDivElement>(null);
+  const refGetItAnimBox = useRef<HTMLDivElement>(null);
+  const refGetItAnim = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -184,6 +186,56 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
 
     return () => ctx.revert();
   });
+
+  function HandleButton(e) {
+    if (refGetIt.current) {
+      console.log(e);
+      const { x: buttonX, y: buttonY } =
+        refGetIt.current.getBoundingClientRect();
+      const { clientX: mouseX, clientY: mouseY } = e;
+
+      console.log(buttonX, buttonY);
+      console.log(mouseX, mouseY);
+
+      const animX = mouseX - buttonX;
+      const animY = mouseY - buttonY;
+
+      console.log(animX, animY);
+
+      gsap.set(refGetItAnimBox.current, {
+        x: animX,
+        y: animY,
+      });
+
+      gsap.set(refGetItAnim.current, {
+        opacity: 1,
+      });
+
+      gsap.fromTo(
+        refGetItAnim.current,
+        {
+          width: 0,
+          height: 0,
+          scale: 0,
+        },
+        {
+          width: refGetIt.current.offsetWidth * 2,
+          height: refGetIt.current.offsetWidth * 2,
+          scale: 1,
+          duration: 0.5,
+          ease: "power2.inOut",
+          onComplete: () => {
+            gsap.set(refGetItAnim.current, {
+              width: 0,
+              height: 0,
+              opacity: 0,
+            });
+          },
+        }
+      );
+    }
+  }
+
   return (
     <div className={clsx(styles.CardGrab, styles[theme])}>
       <div className={clsx(styles.CardGrab_img)}>
@@ -232,9 +284,22 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
           <div className={clsx(styles.CardGrab_discount)} ref={refDiscount}>
             Get discount up to 30%
           </div>
-          <div className={clsx(styles.CardGrab_getIt)} ref={refGetIt}>
+          <button
+            className={clsx(styles.CardGrab_getIt)}
+            ref={refGetIt}
+            onClick={HandleButton}
+          >
+            <div
+              className={clsx(styles.CardGrab_getIt_animBox)}
+              ref={refGetItAnimBox}
+            >
+              <div
+                className={clsx(styles.CardGrab_getIt_anim)}
+                ref={refGetItAnim}
+              />
+            </div>
             Get it
-          </div>
+          </button>
         </div>
       </div>
     </div>
