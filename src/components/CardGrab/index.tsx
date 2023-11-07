@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styles from "./index.module.scss";
 
-import { useLayoutEffect, useRef } from "react";
+import { MouseEventHandler, useLayoutEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { Draggable } from "gsap/all";
@@ -187,7 +187,7 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
     return () => ctx.revert();
   });
 
-  function HandleButton(e: MouseEvent) {
+  const HandleButton: MouseEventHandler<HTMLButtonElement> = (e) => {
     if (refGetIt.current) {
       console.log(e);
       const { x: buttonX, y: buttonY } =
@@ -234,7 +234,7 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
         }
       );
     }
-  }
+  };
 
   return (
     <div className={clsx(styles.CardGrab, styles[theme])}>
