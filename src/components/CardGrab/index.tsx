@@ -187,7 +187,7 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
     return () => ctx.revert();
   });
 
-  function HandleButton(e) {
+  function HandleButton(e: MouseEvent) {
     if (refGetIt.current) {
       console.log(e);
       const { x: buttonX, y: buttonY } =
@@ -219,8 +219,8 @@ const CardGrab: React.FunctionComponent<ICardGrabProps> = ({
           scale: 0,
         },
         {
-          width: refGetIt.current.offsetWidth * 2,
-          height: refGetIt.current.offsetWidth * 2,
+          width: refGetIt.current.offsetWidth * 3,
+          height: refGetIt.current.offsetWidth * 3,
           scale: 1,
           duration: 0.5,
           ease: "power2.inOut",
