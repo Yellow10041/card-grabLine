@@ -68,6 +68,8 @@ const App = () => {
         }
       );
 
+      let completeVal = 0.5;
+
       Draggable.create(tongueRef.current, {
         type: "x",
         bounds: refDrag.current,
@@ -100,7 +102,7 @@ const App = () => {
               opacity: progressCur,
             });
 
-            if (progressCur >= 1) {
+            if (progressCur >= completeVal) {
               console.log("complete");
             }
           }
@@ -117,8 +119,21 @@ const App = () => {
               duration: 0.2,
             });
 
-            if (progressCur >= 1) {
+            if (progressCur >= completeVal) {
               console.log("complete");
+
+              gsap.to(tongueRef.current, {
+                x: refDrag.current.offsetWidth - tongueRef.current.offsetWidth,
+                zIndex: 100,
+                duration: 0.4,
+                ease: "power4.inOut",
+              });
+
+              gsap.to(tongueBackRef.current, {
+                width: `${refDrag.current.offsetWidth}px`,
+                duration: 0.4,
+                ease: "power4.inOut",
+              });
             } else {
               gsap.to(tongueBackRef.current, {
                 width: 40,
