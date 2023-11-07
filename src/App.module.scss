@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.App_cardsGrab {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.App_rank {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

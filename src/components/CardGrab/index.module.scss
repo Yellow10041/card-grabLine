@@ -1,4 +1,4 @@
-.card {
+.CardGrab {
   max-width: 550px;
   padding: 25px;
 
@@ -16,9 +16,22 @@
       rgba(188, 255, 81, 0) 100%
     ),
     #161616;
+
+  &.light {
+    background: radial-gradient(
+        83.31% 59.76% at 78.1% 86.38%,
+        #f1fae7 0%,
+        rgba(236, 250, 231, 0) 100%
+      ),
+      #f6f6f6;
+
+    .CardGrab_drag {
+      background: #fff;
+    }
+  }
 }
 
-.card_img {
+.CardGrab_img {
   position: relative;
   display: flex;
   justify-content: center;
@@ -41,7 +54,7 @@
   }
 }
 
-.card_img_back {
+.CardGrab_img_back {
   position: absolute;
   top: 80%;
   left: 0;
@@ -54,7 +67,7 @@
   }
 }
 
-.card_dragBox {
+.CardGrab_drag {
   position: relative;
   width: 100%;
   height: min-content;
@@ -66,7 +79,7 @@
   z-index: 20;
 }
 
-.card_drag {
+.CardGrab_dragBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,7 +88,7 @@
   height: 100%;
 }
 
-.card_tongueBack {
+.CardGrab_tongueBack {
   position: absolute;
   top: 0;
   left: 0;
@@ -87,7 +100,7 @@
   // z-index: 100;
 }
 
-.card_tongue {
+.CardGrab_tongue {
   position: relative;
   display: flex;
   align-items: center;
@@ -99,7 +112,7 @@
   // z-index: 100;
 }
 
-.card_percent {
+.CardGrab_percent {
   position: absolute;
   left: 0;
   top: 50%;
@@ -126,7 +139,7 @@
   }
 }
 
-.card_arrow {
+.CardGrab_arrow {
   position: absolute;
   left: 0;
   top: 50%;
@@ -152,7 +165,7 @@
   }
 }
 
-.card_discount {
+.CardGrab_discount {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -169,7 +182,7 @@
   }
 }
 
-.card_getIt {
+.CardGrab_getIt {
   display: flex;
   align-items: center;
   height: 40px;
