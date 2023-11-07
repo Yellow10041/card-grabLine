@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
-import gsap, { TweenMax } from "gsap";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 import { Draggable } from "gsap/all";
 gsap.registerPlugin(Draggable);
 
