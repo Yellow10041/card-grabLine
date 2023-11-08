@@ -96,7 +96,7 @@
   min-width: 40px;
   border-radius: 46px;
   background: #bcff52;
-
+  z-index: 20;
   // z-index: 100;
 }
 
@@ -109,7 +109,7 @@
   border-radius: 46px;
   background: #bcff52;
 
-  // z-index: 100;
+  z-index: 20;
 }
 
 .CardGrab_percent {
@@ -176,6 +176,8 @@
 
   mix-blend-mode: difference;
 
+  z-index: 25;
+
   &.active {
     color: #000;
     text-shadow: -0px 2px 5px #fff;
@@ -200,6 +202,16 @@
   transition: 0.2s ease-in-out;
   transition-property: opacity;
 
+  border-width: 0px;
+
+  z-index: 1;
+
+  &:focus {
+    outline: none;
+
+    border-width: 0px;
+  }
+
   &.hidden {
     opacity: 0;
   }
@@ -222,6 +234,4 @@
   filter: blur(0px);
 
   opacity: 0;
-
-  outline: none;
 }
