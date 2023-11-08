@@ -55,7 +55,7 @@ const RankCard: React.FunctionComponent<IRankCardProps> = ({
         },
         {
           scale: theme == "light" ? 1.2 : 1.1,
-          opacity: theme == "light" ? 0.4 : 0.7,
+          opacity: theme == "light" ? 0.6 : 0.7,
         },
         "<10%"
       );
@@ -66,7 +66,7 @@ const RankCard: React.FunctionComponent<IRankCardProps> = ({
           scale: 0.6,
           opacity: 0,
         },
-        { scale: "light" ? 1.2 : 1.1, opacity: theme == "light" ? 0.5 : 0.4 }
+        { scale: "light" ? 1.2 : 1.1, opacity: theme == "light" ? 0.4 : 0.4 }
       );
       // .fromTo(
       //   refBlob.current,
