@@ -8,6 +8,12 @@
       display: block;
     }
   }
+
+  &.light {
+    .RankCard_blub {
+      filter: blur(15px);
+    }
+  }
 }
 
 .RankCard_blubBox {

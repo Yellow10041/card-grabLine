@@ -53,7 +53,10 @@ const RankCard: React.FunctionComponent<IRankCardProps> = ({
           scale: 1,
           opacity: 0.5,
         },
-        { scale: 1.1, opacity: 0.7 },
+        {
+          scale: theme == "light" ? 1.2 : 1.1,
+          opacity: theme == "light" ? 0.4 : 0.7,
+        },
         "<10%"
       );
 
@@ -63,7 +66,7 @@ const RankCard: React.FunctionComponent<IRankCardProps> = ({
           scale: 0.6,
           opacity: 0,
         },
-        { scale: 1.1, opacity: 0.4 }
+        { scale: "light" ? 1.2 : 1.1, opacity: theme == "light" ? 0.5 : 0.4 }
       );
       // .fromTo(
       //   refBlob.current,
@@ -85,7 +88,9 @@ const RankCard: React.FunctionComponent<IRankCardProps> = ({
   }, []);
 
   return (
-    <div className={clsx(styles.RankCard, active && styles.active)}>
+    <div
+      className={clsx(styles.RankCard, active && styles.active, styles[theme])}
+    >
       <div className={clsx(styles.RankCard_blubBox)}>
         <div className={clsx(styles.RankCard_blub)} ref={refBlob}>
           <Blub />
